@@ -1,2 +1,2 @@
-# algorithim
-some fun algorithims
+# algorithms
+some fun algorithms
