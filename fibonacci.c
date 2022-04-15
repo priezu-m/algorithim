@@ -1,5 +1,19 @@
 #include <stdio.h>
 
+unsigned int	memoization(unsigned int x)
+{
+	static unsigned int	minus_two;
+	unsigned int		minus_one;
+	unsigned int		res;
+
+	if (x < 2)
+		return (x);
+	minus_one = memoization(x - 1);
+	res = minus_one + minus_two;
+	minus_two = minus_one;
+	return (res);
+}
+
 unsigned int	recursive(unsigned int x)
 {
 	if (x < 2)
@@ -26,5 +40,6 @@ unsigned int	iterative(unsigned int x)
 int	main(void)
 {
 	printf("%d\n", iterative(112));
+	printf("%d\n", memoization(112));
 	printf("%d\n", recursive(112));
 }
