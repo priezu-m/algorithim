@@ -7,7 +7,10 @@ unsigned int	memoization(unsigned int x)
 	unsigned int		res;
 
 	if (x < 2)
+	{
+		minus_two = 0;
 		return (x);
+	}
 	minus_one = memoization(x - 1);
 	res = minus_one + minus_two;
 	minus_two = minus_one;
